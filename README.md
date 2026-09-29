@@ -55,6 +55,25 @@ The cerebral circulation is modeled using a system of ordinary differential equa
 
 The default model parameters represent a healthy reference subject. Patient-specific ABP and PaCO₂ signals can be supplied as time-dependent inputs.
 
+## Example Usage 
+
+from ICCP_model import HealthySubject, ParallelSplitCerebralRC
+
+# Initialize reference subject and model
+subject = HealthySubject()
+model = ParallelSplitCerebralRC(subject)
+
+# Simulate 900 seconds
+sol = model.simulate(t_span=(0, 900), dt=0.2)
+
+# Extract simulated global cerebral blood flow
+CBF = [
+    model.compute_algebraic(t, sol.y[:, i])["Qmicro_out"]
+    for i, t in enumerate(sol.t)
+]
+
+print(f"Mean CBF: {sum(CBF)/len(CBF):.2f} mL/s")
+
 ## Limitations
 
 This model is intended for academic research and physiological simulation. It is a simplified lumped representation of cerebral circulation and does not resolve patient-specific cerebrovascular anatomy or spatial blood-flow distributions.
