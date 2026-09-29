@@ -57,6 +57,7 @@ The default model parameters represent a healthy reference subject. Patient-spec
 
 ## Example Usage 
 
+```python
 from ICCP_model import HealthySubject, ParallelSplitCerebralRC
 
 # Initialize reference subject and model
@@ -73,7 +74,7 @@ CBF = [
 ]
 
 print(f"Mean CBF: {sum(CBF)/len(CBF):.2f} mL/s")
-
+```
 ## Limitations
 
 This model is intended for academic research and physiological simulation. It is a simplified lumped representation of cerebral circulation and does not resolve patient-specific cerebrovascular anatomy or spatial blood-flow distributions.
