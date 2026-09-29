@@ -65,7 +65,7 @@ subject = HealthySubject()
 model = ParallelSplitCerebralRC(subject)
 
 # Simulate 900 seconds
-sol = model.simulate(t_span=(0, 900), dt=0.2)
+sol = model.simulate(t_span=(0, 900), dt=0.001)
 
 # Extract simulated global cerebral blood flow
 CBF = [
