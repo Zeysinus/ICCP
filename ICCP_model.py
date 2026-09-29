@@ -545,7 +545,7 @@ def run_model_calibration(
         abp_func,
         paco2_func,
         t_data,
-        dt=0.02 # can be adapted depending on performance
+        dt=0.02 # Reduced output resolution for Mxa calibration (10-s block averaging)
 ):
 
     """
