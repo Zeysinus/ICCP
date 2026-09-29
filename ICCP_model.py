@@ -23,12 +23,12 @@ class HealthySubject:
         # ============================================================
         # PRESSURES [mmHg]
         # ============================================================
-        self.P_ICP = 10 #8.56
-        self.P_CVP = 6 #10.3
+        self.P_ICP = 10
+        self.P_CVP = 6 
         self.P_star = 0.0
 
         self.Pin0_target = 80.0           # systemic arterial input pressure
-        self.Part0_target = 62.00        # common downstream arterial pressure (intravascular pressure) 72 workes with MCA calibration
+        self.Part0_target = 62.00        # common downstream arterial pressure (intravascular pressure)
         self.Pmicro0_target = 45.0
         self.Pv0_target = 14.0
 
@@ -545,7 +545,7 @@ def run_model_calibration(
         abp_func,
         paco2_func,
         t_data,
-        dt=0.02 #same Fs of 125 Hz as in the clinical data
+        dt=0.02 # can be adapted depending on performance
 ):
 
     """
